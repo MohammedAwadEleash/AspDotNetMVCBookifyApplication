@@ -301,5 +301,10 @@ Visit the live demo: [EleashBookifyDemo](http://eleashbookify.runasp.net/)
 
 - **Username**: `AdminTest@bookify.com`
 - **Password**: `P@AdminEleashBookifyTest12,@}`
+- 
+## Thank You
 
-![Logo_sm](https://github.com/user-attachments/assets/ae015915-4a2d-49c3-b2bc-96a29443cd3d)
+A special thanks to everyone who has supported and contributed to the development of this project. Every effort, no matter how small, has made a significant impact💝. 
+
+- Adibos (Mohammed Awad): For creating this project with passion and dedication.
+![Logo_sm](https://github.com/user-attachments/assets/b12f147e-8d34-4acb-b859-c2eefe600faa)
