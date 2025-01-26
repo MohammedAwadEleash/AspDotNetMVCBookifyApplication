@@ -1,0 +1,328 @@
+﻿@model SubscriberViewModel
+
+@{
+	ViewData["Title"] = "Subscriber Details";
+
+	var lastSubscription=Model.Subscriptions.Last();
+	var subscriberStatus = Model.IsBlackListed ? SubscriberStatus.Banned 
+	: lastSubscription.EndDate < DateTime.Today ? SubscriberStatus.Inactive : SubscriberStatus.Active;
+	var StatusClass= Model.IsBlackListed? "danger"
+	: lastSubscription.EndDate<DateTime.Today? "warning": "success";
+}
+
+<div class="alert bg-light-primary border border-primary border-3 border-dashed d-flex justify-content-between w-100 p-5 mb-10">
+	<div class="d-flex align-items-center">
+		<div class="symbol symbol-40px me-4">
+			<div class="symbol-label fs-2 fw-semibold text-success">
+				<!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+				<span class="svg-icon svg-icon-2 text-primary">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+						<path d="M18 13C17.06 13 16.19 13.33 15.5 13.88C14.58 14.61 14 15.74 14 17C14 17.75 14.21 18.46 14.58 19.06C15.27 20.22 16.54 21 18 21C19.01 21 19.93 20.63 20.63 20C20.94 19.74 21.21 19.42 21.42 19.06C21.79 18.46 22 17.75 22 17C22 14.79 20.21 13 18 13ZM20.07 16.57L17.94 18.54C17.8 18.67 17.61 18.74 17.43 18.74C17.24 18.74 17.05 18.67 16.9 18.52L15.91 17.53C15.62 17.24 15.62 16.76 15.91 16.47C16.2 16.18 16.68 16.18 16.97 16.47L17.45 16.95L19.05 15.47C19.35 15.19 19.83 15.21 20.11 15.51C20.39 15.81 20.37 16.28 20.07 16.57Z" fill="currentColor"></path>
+						<path opacity="0.4" d="M21.0901 21.5C21.0901 21.78 20.8701 22 20.5901 22H3.41016C3.13016 22 2.91016 21.78 2.91016 21.5C2.91016 17.36 6.99015 14 12.0002 14C13.0302 14 14.0302 14.14 14.9502 14.41C14.3602 15.11 14.0002 16.02 14.0002 17C14.0002 17.75 14.2101 18.46 14.5801 19.06C14.7801 19.4 15.0401 19.71 15.3401 19.97C16.0401 20.61 16.9702 21 18.0002 21C19.1202 21 20.1302 20.54 20.8502 19.8C21.0102 20.34 21.0901 20.91 21.0901 21.5Z" fill="currentColor"></path>
+						<path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"></path>
+					</svg>
+				</span>
+
+				<!--end::Svg Icon-->
+			</div>
+		</div>
+		<!--begin::Content-->
+		<div class="d-flex flex-column pe-0 pe-sm-10">
+			<h5 class="mb-1">Subscriber Details</h5>
+		</div>
+		<!--end::Content-->
+	</div>
+	<div>
+		<a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@Model.Key">
+			<i class="bi bi-plus-square-dotted"></i>
+			Edit
+		</a>
+	</div>
+</div>
+
+<div class="d-flex flex-column flex-xl-row">
+	<!--begin::Sidebar-->
+	<div class="flex-column flex-lg-row-auto w-100 w-xl-350px mb-10">
+		<!--begin::Card-->
+		<div class="card mb-5 mb-xl-8">
+			<!--begin::Card body-->
+			<div class="card-body pt-15">
+				<!--begin::Summary-->
+				<div class="d-flex flex-center flex-column mb-5">
+					<!--begin::Avatar-->
+					<a data-fslightbox href="@Model.ImageUrl">
+						<div class="symbol symbol-150px symbol-circle mb-7">
+							<img src="@Model.ImageThumbnailUrl" alt="image">
+						</div>
+					</a>
+					<!--end::Avatar-->
+					<!--begin::Name-->
+					<p class="fs-3 text-gray-800 text-hover-primary fw-bold mb-1">@Model.FullName</p>
+					<!--end::Name-->
+					<!--begin::Email-->
+					<p class="fs-5 fw-semibold text-muted text-hover-primary mb-6">@Model.Email</p>
+					<!--end::Email-->
+				</div>
+				<!--end::Summary-->
+				<!--begin::Details toggle-->
+				<div class="d-flex flex-stack fs-4 py-3">
+					<div class="fw-bold">Details</div>
+					<!--begin::Badge-->
+					<div class="badge badge-light-@StatusClass d-inline" id="StatusBadge">@subscriberStatus subscriber</div>
+					<!--begin::Badge-->
+				</div>
+				<!--end::Details toggle-->
+				<div class="separator separator-dashed my-3"></div>
+				<!--begin::Details content-->
+				<div class="pb-5 fs-6">
+					<!--begin::Details item-->
+					<div class="fw-bold mt-5">Account ID</div>
+					<div class="text-gray-600">ID-@Model.Id</div>
+					<!--end::Details item-->
+
+					<!--begin::Details item-->
+					<div class="fw-bold mt-5">Mobile No.</div>
+					<div class="text-gray-600">
+						<p class="text-gray-600 text-hover-primary">@Model.MobileNumber</p>
+					</div>
+					<!--end::Details item-->
+
+					<!--begin::Details item-->
+					<div class="fw-bold mt-5">National ID</div>
+					<div class="text-gray-600">
+						<p class="text-gray-600 text-hover-primary">@Model.NationalId</p>
+					</div>
+					<!--end::Details item-->
+					<!--begin::Details item-->
+					<div class="fw-bold mt-5">Date of Birth</div>
+					<div class="text-gray-600">
+						<p class="text-gray-600 text-hover-primary">@Model.DateOfBirth.ToString("ddd MMM, yyyy")
+					</div>
+					<!--end::Details item-->
+
+					<!--begin::Details item-->
+					<div class="fw-bold mt-5">Address</div>
+					<div class="text-gray-600">
+						@Model.Address,
+						<br>@Model.Area
+						<br>@Model.Governorate
+
+					</div>
+					<!--end::Details item-->
+
+
+				</div>
+				<!--end::Details content-->
+			</div>
+			<!--end::Card body-->
+		</div>
+		<!--end::Card-->
+	</div>
+	<!--end::Sidebar-->
+	<!--begin::Content-->
+	<div class="flex-lg-row-fluid ms-lg-15">
+		<!--begin:::Tabs-->
+		<ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8" role="tablist">
+			<!--begin:::Tab item-->
+			<li class="nav-item" role="presentation">
+				<a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#Overview" aria-selected="false" role="tab" tabindex="-1">Overview</a>
+			</li>
+			<!--end:::Tab item-->
+			<!--begin:::Tab item-->
+			<li class="nav-item" role="presentation">
+				<a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#Rentals" aria-selected="true" role="tab">Rentals</a>
+			</li>
+			<!--end:::Tab item-->
+		</ul>
+		<!--end:::Tabs-->
+		<!--begin:::Tab content-->
+		<div class="tab-content">
+			<!--begin:::Tab pane-->
+			<div class="tab-pane fade active show" id="Overview" role="tabpanel">
+				<div class="row row-cols-1 row-cols-md-2 mb-6 mb-xl-9">
+					<div class="col">
+						<!--begin::Card-->
+						<div class="card pt-4 h-md-100 mb-6 mb-md-0">
+							<!--begin::Card header-->
+							<div class="card-header border-0">
+								<!--begin::Card title-->
+								<div class="card-title">
+									<h2 class="fw-bold">Number of Rentals </h2>
+								</div>
+								<!--end::Card title-->
+							</div>
+							<!--end::Card header-->
+							<!--begin::Card body-->
+							<div class="card-body pt-0">
+								<div class="fw-bold fs-2">
+									<div class="d-flex">
+										<!--begin::Svg Icon | path: icons/duotune/general/gen030.svg-->
+										<span class="svg-icon svg-icon-info svg-icon-2x">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M18.3721 4.65439C17.6415 4.23815 16.8052 4 15.9142 4C14.3444 4 12.9339 4.73924 12.003 5.89633C11.0657 4.73913 9.66 4 8.08626 4C7.19611 4 6.35789 4.23746 5.62804 4.65439C4.06148 5.54462 3 7.26056 3 9.24232C3 9.81001 3.08941 10.3491 3.25153 10.8593C4.12155 14.9013 9.69287 20 12.0034 20C14.2502 20 19.875 14.9013 20.7488 10.8593C20.9109 10.3491 21 9.81001 21 9.24232C21.0007 7.26056 19.9383 5.54462 18.3721 4.65439Z" fill="currentColor"></path>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+										<div class="ms-2"id="TotalCopies">
+											@Model.Rentals.Sum(r => r.NumberOfCopies)
+										<!--  Number of copies per Subscriber -->
+										</div>
+									</div>
+									<div class="fs-7 fw-normal text-muted"> Total number of copies</div>
+								</div>
+							</div>
+							<!--end::Card body-->
+						</div>
+						<!--end::Card-->
+					</div>
+					<div class="col">
+						<!--begin::Reward Tier-->
+						<div class="card bg-@StatusClass hoverable h-md-100">
+							<!--begin::Body--> 
+							<div class="card-body">
+								<!--begin::Svg Icon | path: icons/duotune/general/gen020.svg-->
+								<span class="svg-icon svg-icon-white svg-icon-3x ms-n1">
+									  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="@(subscriberStatus == SubscriberStatus.Active && !Model.IsBlackListed ? string.Empty : "d-none")" id="ActiveStatusIcon">
+										<path opacity="0.3" d="M7.16973 20.95C6.26973 21.55 5.16972 20.75 5.46972 19.75L7.36973 14.05L2.46972 10.55C1.56972 9.95005 2.06973 8.55005 3.06973 8.55005H20.8697C21.9697 8.55005 22.3697 9.95005 21.4697 10.55L7.16973 20.95Z" fill="currentColor" />
+										<path d="M11.0697 2.75L7.46973 13.95L16.9697 20.85C17.8697 21.45 18.9697 20.65 18.6697 19.65L13.1697 2.75C12.7697 1.75 11.3697 1.75 11.0697 2.75Z" fill="currentColor" />
+									</svg>
+									@if(subscriberStatus==SubscriberStatus.Banned)  // if subscriber is BlackListed
+									{
+
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2C17.5 2 22 6.5 22 12ZM18 12C18 11.4 17.6 11 17 11H7C6.4 11 6 11.4 6 12C6 12.6 6.4 13 7 13H17C17.6 13 18 12.6 18 12Z" fill="currentColor" />
+										</svg>
+									}
+									else if (subscriberStatus== SubscriberStatus.Inactive)
+									{
+
+										<svg width="24" height="24" fill="currentColor" class="bi bi-battery" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm14 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8" />
+										</svg>
+
+
+									}
+
+								</span>
+								<!--end::Svg Icon-->
+								<div class="text-white fw-bold fs-2 mt-5" id="CardStatus">@subscriberStatus Subscriber</div>
+								<div class="fw-semibold text-white">Subscrber since: @Model.CreatedOn.ToString("dd MMM, yyyy")</div>
+							</div>
+							<!--end::Body-->
+						</div>
+						<!--end::Reward Tier-->
+					</div>
+				</div>
+				<!--begin::Card-->
+				<div class="card pt-4 mb-6 mb-xl-9">
+					<!--begin:: Card header-->
+
+					<div class="card-header border-0 pt-5">
+						<h3 class="card-title align-items-start flex-column">
+							<span class="card-label fw-bold fs-3 mb-1">Renewal History</span>
+
+						</h3>
+						@if(!Model.IsBlackListed)
+						{
+
+							<div class="card-toolbar">
+								<a href="javascript:;" class="btn btn-sm btn-light-primary js-renew" data-key="@Model.Key">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-firefox" viewBox="0 0 16 16">
+										<path d="M13.384 3.408c.535.276 1.22 1.152 1.556 1.963a8 8 0 0 1 .503 3.897l-.009.077-.026.224A7.758 7.758 0 0 1 .006 8.257v-.04q.025-.545.114-1.082c.01-.074.075-.42.09-.489l.01-.051a6.6 6.6 0 0 1 1.041-2.35q.327-.465.725-.87.35-.358.758-.65a1.5 1.5 0 0 1 .26-.137c-.018.268-.04 1.553.268 1.943h.003a5.7 5.7 0 0 1 1.868-1.443 3.6 3.6 0 0 0 .021 1.896q.105.07.2.152c.107.09.226.207.454.433l.068.066.009.009a2 2 0 0 0 .213.18c.383.287.943.563 1.306.741.201.1.342.168.359.193l.004.008c-.012.193-.695.858-.933.858-2.206 0-2.564 1.335-2.564 1.335.087.997.714 1.839 1.517 2.357a4 4 0 0 0 .439.241q.114.05.228.094c.325.115.665.18 1.01.194 3.043.143 4.155-2.804 3.129-4.745v-.001a3 3 0 0 0-.731-.9 3 3 0 0 0-.571-.37l-.003-.002a2.68 2.68 0 0 1 1.87.454 3.92 3.92 0 0 0-3.396-1.983q-.116.001-.23.01l-.042.003V4.31h-.002a4 4 0 0 0-.8.14 7 7 0 0 0-.333-.314 2 2 0 0 0-.2-.152 4 4 0 0 1-.088-.383 5 5 0 0 1 1.352-.289l.05-.003c.052-.004.125-.01.205-.012C7.996 2.212 8.733.843 10.17.002l-.003.005.003-.001.002-.002h.002l.002-.002h.015a.02.02 0 0 1 .012.007 2.4 2.4 0 0 0 .206.48q.09.153.183.297c.49.774 1.023 1.379 1.543 1.968.771.874 1.512 1.715 2.036 3.02l-.001-.013a8 8 0 0 0-.786-2.353" />
+									</svg>
+									Renew
+								</a>
+							</div>
+
+						}
+					</div>
+					<!--end::Card header-->
+					<!--begin::Card body-->
+					<div class="card-body py-3">
+
+						<div class="table-responsive">
+							<!--begin::Table-->
+							<table class="table align-middle gs-0 gy-4" id="SubscriptionsTable">
+								<!--begin::Table head-->
+								<thead>
+									<tr class="fw-bold text-muted bg-light">
+										<th class="ps-4 min-w-125px rounded-start">Start Date</th>
+										<th class="min-w-125px">End Date</th>
+										<th class="min-w-150px">Status</th>
+										<th class="min-w-125px text-end rounded-end pe-4">Created On</th>
+									</tr>
+								</thead>
+								<!--end::Table head-->
+								<!--begin::Table body-->
+								<tbody>
+
+									@foreach (var subscription in Model.Subscriptions)
+
+									{
+										<partial name="_SubscriptionRow" model="@subscription" />
+
+									}
+								</tbody>
+								<!--end::Table body-->
+							</table>
+							<!--end::Table-->	
+						</div>  
+					</div>
+					<!--end::Card body-->
+				</div>
+				<!--end::Card-->
+			</div>
+			<!--end:::Tab pane-->
+			<!--begin:::Tab pane-->
+			<div class="tab-pane fade" id="Rentals" role="tabpanel">
+				<!--begin::Card-->
+				<div class="card pt-4 mb-6 mb-xl-9">
+					<!--begin::Card header-->
+					<div class="card-header border-0 pt-5">
+						<h3 class="card-title align-items-start flex-column">
+							<span class="card-label fw-bold fs-3 mb-1">Rentals</span>
+
+						</h3>
+						@if (!Model.IsBlackListed)
+
+						{
+
+							<div id="RentalButton" class="card-toolbar
+							@(lastSubscription.EndDate < DateTime.Today.AddDays((int)RentalsConfiguration.RentalDuration) ? "d-none" : "")">
+								<a  asp-controller="Rentals" asp-action="Create" asp-route-sKey="@Model.Key"  class="btn btn-sm btn-light-primary" >
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+									<path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0" />
+									</svg>
+									Add Rental
+								</a>
+							</div>
+
+						}
+					</div>
+					<!--end::Card header-->
+					<!--begin::Card body-->
+					<div class="card-body pt-0 pb-5">
+						<partial name="_Rentals" model="@Model.Rentals" />
+
+					</div>
+					<!--end::Card body-->
+				</div>
+				<!--end::Card-->
+			</div>
+			<!--end:::Tab pane-->
+		</div>
+		<!--end:::Tab content-->
+	</div>
+	<!--end::Content-->
+</div>
+
+@section Plugins
+{
+	<script src="~/assets/plugins/fslightbox/fslightbox.bundle.js"></script>
+}
+
+@section Scripts
+{
+	<script src="~/js/subscriber-details.js" asp-append-version="true"></script>
+
+}

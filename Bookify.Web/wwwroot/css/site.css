@@ -1,0 +1,234 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Start Override Theme */
+.header {
+    background-color: #005af7;
+}
+.form-floating>.form-select{
+
+    padding-bottom:0.225rem;
+}
+/* End Override Theme */
+
+
+/* Start Override Bootbox */
+
+.bootbox-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 0.75rem;
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+
+/* End Override Bootbox */
+
+/* Start Override typeahead */
+.twitter-typeahead {
+    width: 100%;
+}
+
+.tt-suggestion {
+    font-size: 16px;
+}
+
+    .tt-suggestion:not(:last-child) {
+        border-bottom: 1px dashed #dcdcdc;
+    }
+.underline-animate {
+    position: relative;
+    display: inline-block;
+    color: #007BFF; /* Initial text color */
+    text-decoration: none; /* Ensure no default underline */
+    transition: color 0.3s ease-in-out; /* Smooth text color animation */
+}
+
+    .underline-animate:hover {
+        color: #FF5733; /* Change text color on hover */
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .underline-animate::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0; /* Start with no underline */
+        height: 2px; /* Thickness of the underline */
+        background: #FF5733; /* Color of the underline */
+        transition: width 0.3s ease-in-out; /* Smooth underline animation */
+    }
+
+    .underline-animate:hover::after {
+        width: 100%; /* Full width underline on hover */
+    }
+
+@keyframes pulse {
+    0%, 100% {
+        color: #007BFF;
+    }
+
+    50% {
+        color: #FF5733;
+    }
+}
+/* change color */
+@keyframes colorChange {
+    0% {
+        color: #FF5733;
+    }
+    /* red */
+    25% {
+        color: #33FF57;
+    }
+    /* green */
+    50% {
+        color: #3357FF;
+    }
+    /* blue */
+    75% {
+        color: #FF33A8;
+    }
+    /* pink */
+    100% {
+        color: #FF5733;
+    }
+    /*  back to red  */
+}
+
+/* up and down movement */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* normal mode  */
+    }
+
+    50% {
+        transform: translateY(-20px); /* move up*/
+    }
+}
+
+/* Apply effects */
+.color-bounce  {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    animation: colorChange 3s infinite, bounce 1.5s infinite;
+}
+
+.selectable-text {
+    user-select: text;
+    cursor: text;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .selectable-text:hover {
+        background-color: #FFFF99;
+    }
+
+/*.tt-suggestion:hover,
+.tt-suggestion:focus {
+    background-color: #dcdcdc;
+}*/
+
+
+/* End Override typeahead */
+
+/* Start Custom Styles */
+
+
+.dt-spinner + div{
+
+    display: none !important;
+}
+
+h-70px{
+
+    height:70px !important;
+}
+
+
+.glass {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.w-fit-content{
+    width:fit-content;
+}
+
+.custom-header {
+    font-family: "Yuji Mai", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.page-bg {
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../assets/Images/bg8.jpg);
+}
+
+
+.mh-450px{
+
+    min-height:450px;
+}
+@media only screen and (min-width:1025px)
+{
+
+    .launcher .sidebar {
+        position: fixed;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 425px;
+        top: 50px;
+        right: 50px;
+        bottom: 50px;
+        background-color: rgba(19,0,97,.3);
+        border-radius: 1.75rem;
+    }
+}
+
+.transform-direction
+{
+    transform: scaleX(-1);
+
+}
+
+/*#ResetChart {
+    position: absolute;
+    bottom: 10px;
+}*/
+/* End Custom Styles */
+
+
+

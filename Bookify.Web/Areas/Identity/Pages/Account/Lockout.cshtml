@@ -1,0 +1,77 @@
+﻿@page
+@model LockoutModel
+@{
+    ViewData["Title"] = "Locked out";
+}
+
+<div class="d-flex flex-column flex-root">
+    <!--begin::Page bg image-->
+    <style>
+        body {
+            background-image: url('/assets/images/bg3.jpg');
+        }
+
+        [data-theme="dark"] body {
+            background-image: url('/assets/images/bg3-dark.jpg');
+        }
+    </style>
+    <!--end::Page bg image-->
+    <div class="d-flex flex-column flex-center flex-column-fluid">
+        <div class="d-flex flex-column flex-center text-center p-10">
+            <div class="card card-flush w-lg-650px py-5">
+                <div class="card-body py-15 py-lg-20">
+                    <div class="mb-14">
+                        <a href="../../demo14/dist/index.html" class="">
+                            <img alt="Logo" src="~/assets/images/logo_sm.png" class="h-100px">
+                        </a>
+                    </div>
+                    <h1 class="fw-bolder text-gray-900 mb-5">@ViewData["Title"]</h1>
+                    <div class="fw-semibold fs-6 text-gray-500 mb-8">
+                        This account has been locked out, please try again after <span class="text-danger" id="counter"></span>
+                    </div>
+                    <div class="mb-11">
+                        <a asp-page="./Login" class="btn btn-sm btn-primary">Go to Login Page</a>
+                    </div>
+                    <div class="mb-0">
+                        <img src="~/assets/images/vault-bro.svg" class="mw-100 mh-300px theme-light-show" alt="">
+                        <img src="~/assets/images/vault-bro.svg" class="mw-100 mh-300px theme-dark-show" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            var lockoutTime = new Date();
+            lockoutTime.setMinutes(lockoutTime.getMinutes() + 5); 
+
+            localStorage.setItem("lockoutEndTime", lockoutTime.toString());
+
+            startCountdown(lockoutTime);
+        });
+
+        function startCountdown(lockoutEndTime) {
+            function updateCountdown() {
+                var now = new Date();
+                var timeRemaining = lockoutEndTime - now;
+
+                if (timeRemaining <= 0) {
+                    window.location.href = "/Login";
+                    return;
+                }
+
+                var minutes = Math.floor(timeRemaining / 60000);
+                var seconds = Math.floor((timeRemaining % 60000) / 1000);
+
+                document.getElementById("counter").innerText = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+                setTimeout(updateCountdown, 1000);
+            }
+
+            updateCountdown();
+        }
+    </script>
+}

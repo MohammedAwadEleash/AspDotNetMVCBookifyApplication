@@ -1,0 +1,145 @@
+﻿@model IEnumerable<CopyHistoryViewModel>
+
+
+
+
+@{
+	ViewData["Title"] = "Rental History";
+}
+
+@if (!Model.Any())
+{
+	<div class="alert bg-light-info border border-info border-3 border-dashed d-flex flex-column flex-sm-row w-100 p-5 mt-10">
+		<!--begin::Icon-->
+		<!--begin::Svg Icon | path: icons/duotune/general/gen007.svg-->
+		<span class="svg-icon svg-icon-2hx svg-icon-info me-4 mb-5 mb-sm-0">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path opacity="0.3" d="M12 22C13.6569 22 15 20.6569 15 19C15 17.3431 13.6569 16 12 16C10.3431 16 9 17.3431 9 19C9 20.6569 10.3431 22 12 22Z" fill="currentColor"></path>
+				<path d="M19 15V18C19 18.6 18.6 19 18 19H6C5.4 19 5 18.6 5 18V15C6.1 15 7 14.1 7 13V10C7 7.6 8.7 5.6 11 5.1V3C11 2.4 11.4 2 12 2C12.6 2 13 2.4 13 3V5.1C15.3 5.6 17 7.6 17 10V13C17 14.1 17.9 15 19 15ZM11 10C11 9.4 11.4 9 12 9C12.6 9 13 8.6 13 8C13 7.4 12.6 7 12 7C10.3 7 9 8.3 9 10C9 10.6 9.4 11 10 11C10.6 11 11 10.6 11 10Z" fill="currentColor"></path>
+			</svg>
+		</span>
+		<!--end::Svg Icon-->
+		<!--end::Icon-->
+		<!--begin::Content-->
+		<div class="d-flex flex-column pe-0 pe-sm-10 justify-content-center">
+			<h5 class="mb-0">No rental history form this copy.</h5>
+		</div>
+		<!--end::Content-->
+	</div>
+}
+else
+{
+
+	<div class="alert bg-light-primary border border-primary border-3 border-dashed d-flex justify-content-between w-100 p-5 mb-10">
+		<div class="d-flex align-items-center">
+			<div class="symbol symbol-40px me-4">
+				<div class="symbol-label fs-2 fw-semibold text-success">
+					<!--begin::Svg Icon | path: icons/duotune/general/gen002.svg-->
+					<span class="svg-icon svg-icon-2 svg-icon-primary">
+						<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-globe-asia-australia" viewBox="0 0 16 16">
+	  <path d="m10.495 6.92 1.278-.619a.483.483 0 0 0 .126-.782c-.252-.244-.682-.139-.932.107-.23.226-.513.373-.816.53l-.102.054c-.338.178-.264.626.1.736a.48.48 0 0 0 .346-.027ZM7.741 9.808V9.78a.413.413 0 1 1 .783.183l-.22.443a.6.6 0 0 1-.12.167l-.193.185a.36.36 0 1 1-.5-.516l.112-.108a.45.45 0 0 0 .138-.326M5.672 12.5l.482.233A.386.386 0 1 0 6.32 12h-.416a.7.7 0 0 1-.419-.139l-.277-.206a.302.302 0 1 0-.298.52z"/>
+	  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1.612 10.867l.756-1.288a1 1 0 0 1 1.545-.225l1.074 1.005a.986.986 0 0 0 1.36-.011l.038-.037a.88.88 0 0 0 .26-.755c-.075-.548.37-1.033.92-1.099.728-.086 1.587-.324 1.728-.957.086-.386-.114-.83-.361-1.2-.207-.312 0-.8.374-.8.123 0 .24-.055.318-.15l.393-.474c.196-.237.491-.368.797-.403.554-.064 1.407-.277 1.583-.973.098-.391-.192-.634-.484-.88-.254-.212-.51-.426-.515-.741a7 7 0 0 1 3.425 7.692 1 1 0 0 0-.087-.063l-.316-.204a1 1 0 0 0-.977-.06l-.169.082a1 1 0 0 1-.741.051l-1.021-.329A1 1 0 0 0 11.205 9h-.165a1 1 0 0 0-.945.674l-.172.499a1 1 0 0 1-.404.514l-.802.518a1 1 0 0 0-.458.84v.455a1 1 0 0 0 1 1h.257a1 1 0 0 1 .542.16l.762.49a1 1 0 0 0 .283.126 7 7 0 0 1-9.49-3.409Z"/>
+	</svg>
+					</span>
+					<!--end::Svg Icon-->
+				</div>
+			</div>
+			<!--begin::Content-->
+			<div class="d-flex flex-column pe-0 pe-sm-10">
+				<h5 class="mb-1">Rental History</h5>
+			</div>
+			<!--end::Content-->
+		</div>
+	</div>
+
+
+	<div class="card pt-4 mb-6 mb-xl-9">
+		<!--begin::Card header-->
+		<div class="card-header border-0 pt-5">
+			<h3 class="card-title align-items-start flex-column">
+				<span class="card-label fw-bold fs-3 mb-1"> Rentals </span>
+			</h3>
+		</div>
+		<!--end::Card header-->
+		<!--begin::Card body-->
+		<div class="card-body pt-0 pb-5">
+
+			<div class="table-responsive">
+				<!--begin::Table-->
+				<table class="table align-middle gs-0 gy-4">
+					<!--begin::Table head-->
+					<thead>
+						<tr class="fw-bold text-muted bg-light">
+							<th class="ps-4 min-w-125px rounded-start">Rental Number</th>
+							<th class="min-w-125px">Subscriber Name  </th>
+							<th class="min-w-125px">Subscriber Email</th>
+							<th class="min-w-125px">Subscriber Mobile</th>
+							<th class="min-w-125px">Start Date</th>
+							<th class="min-w-125px">End Date</th>
+							<th class="min-w-150px">Total Delay (Days)</th>
+							<th class="min-w-150px">Returnn Date</th>
+							<th class="pe-4 min-w-150px text-end rounded-end">Extend Date</th>
+
+						</tr>
+					</thead>
+					<!--end::Table head-->
+					<!--begin::Table body-->
+					<tbody>
+						@foreach (var rental in Model)
+						{
+							<tr>
+
+								<td class="ps-14">
+									@rental.RentalNumber
+
+								</td>
+								<td>
+									@rental.SubscriberName
+
+								</td>
+								<td>
+									@rental.SubscriberEmail
+
+								</td>
+								<td>
+									@rental.SubscriberMobile
+
+								</td>
+								<td>
+									@rental.RentalDate.ToString("d MMM, yyyy")
+								</td>
+								<td>
+									@rental.EndDate.ToString("d MMM, yyyy")
+								</td>
+								<td class="@(rental.DelayInDays > 0 ? "text-danger" : "")">
+									@rental.DelayInDays Day(s)
+								</td>
+
+								<td class="pe-4">
+									@rental.ReturnDate?.ToString("d MMM, yyyy")
+
+								</td>
+								<td class="text-end pe-4">
+
+									@rental.ExtendedOn?.ToString("d MMM, yyyy")
+
+								</td>
+							</tr>
+						}
+					</tbody>
+					<!--end::Table body-->
+				</table>
+				<!--end::Table-->
+			</div>
+		</div>
+		<!--end::Card body-->
+	</div>
+
+}
+
+
+
+@section Plugins
+{
+	<script src="~/assets/plugins/fslightbox/fslightbox.bundle.js"></script>
+}
