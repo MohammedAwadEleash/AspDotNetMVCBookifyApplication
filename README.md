@@ -306,5 +306,5 @@ Visit the live demo: [EleashBookifyDemo](http://eleashbookify.runasp.net/)
 
 A special thanks to everyone who has supported and contributed to the development of this project. Every effort, no matter how small, has made a significant impact💝. 
 
-- Adibos (Mohammed Awad): For creating this project with passion and dedication.
+- (Mohammed Awad Eleash): For creating this project with passion and dedication.
 ![Logo_sm](https://github.com/user-attachments/assets/b12f147e-8d34-4acb-b859-c2eefe600faa)
