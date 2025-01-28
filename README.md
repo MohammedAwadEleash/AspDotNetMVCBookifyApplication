@@ -26,19 +26,18 @@
 
 ---
 
-## 🎯 **Key Advantages**
-
-- 📊 Comprehensive reporting & analytics
+##  **Key Advantages**
+ -🎯Simple rental operations
+- 📊 Comprehensive reporting 
 - 📈 Enhanced user experience with a modern and responsive interface
 - 📱 User-friendly design with real-time updates
 - 🔐 Robust user security measures
 - 📈 Flexible and scalable system architecture
 
----
 
 ## 🏗 **System Architecture**
 
-Bookify is a comprehensive ASP.NET Core web application designed for efficient book rental management, following Clean Architecture principles. It offers key functionalities such as user authentication and authorization,book handling, and rental automation, along with advanced features like background job processing through Hangfire, detailed logging via Serilog, and integrated WhatsApp and email notifications.
+Bookify is a comprehensive ASP.NET Core web application designed for efficient book rental management, following Clean Architecture principles. It offers key functionalities such as user authentication and authorization,book handling, and rental automation, along with advanced features like background job processing through Hangfire, detailed logging via Serilog, and integrated WhatsApp and email notifications🔔📯📣🔊.
 
 The system is built using industry-standard patterns and principles including Repository Pattern, Unit of Work, SOLID Principles,and Dependency Injection, ensuring maintainability, scalability, and testability. Repository Pattern and Unit of Work are utilized for clean separation of data access and transaction management, while SOLID principles ensure modularity and flexibility.Dependency Injection is leveraged to manage system dependencies, promoting loose coupling and ease of extension.
 
@@ -58,14 +57,14 @@ Bookify's architecture ensures a clear separation between business logic, data a
 ### 🔄 **Rental System**
 
 - Rental processing
-- Due date management
+- Due date management ⏱️ 🕕
 - Automated fine calculation
-- SMS/WhatsApp notifications
+- Email and WhatsApp notifications 📩 🔔📯📣🔊
 
 ### 👤 **User Management**
 
-- Role-based permissions
-- Secure login/authentication
+ 🔐   - Role-based permissions
+🔑🔏   -Secure login/authentication
 - Email verification and profile management
 
 ---
@@ -76,7 +75,14 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - **ORM**: Entity Framework Core
 - **Database**: SQL Server
 - **Authentication**: ASP.NET Core Identity
-- **Frontend**: HTML, CSS, Bootstrap, jQuery, JavaScript (Ajax), DataTables
+### Frontend**
+- **Markup Language**: HTML
+- **Styling**: CSS
+- **UI Framework**: Bootstrap
+- **JavaScript Libraries**: jQuery, DataTables (Client and Server-side)
+- **AJAX Calls**: JavaScript for handling dynamic interactions
+
+
 - **File Storage**: Cloudinary
 - **Background Tasks**: Hangfire
 - **Mapping**: AutoMapper
@@ -202,10 +208,10 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 ### 📚 **Book Management**
 
-- Inventory monitoring
-- Categorization of books
-- Image uploads
-- Real-time stock tracking
+-📚 Inventory monitoring
+- 🔖Categorization of books
+- 🎥Image uploads
+- 📊 Stock monitoring
 
 ### 🔄 **Rental System**
 
@@ -233,7 +239,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - **Background Tasks**: Hangfire
 - **Mapping**: AutoMapper
 - **WhatsApp API**: Twilio
-
+- **Image Processing: ImageSharp (SixLabors.ImageSharp)
 ---
 
 ## 🔐 **Security**
