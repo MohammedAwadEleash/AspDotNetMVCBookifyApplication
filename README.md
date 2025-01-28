@@ -75,7 +75,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - **ORM**: Entity Framework Core
 - **Database**: SQL Server
 - **Authentication**: ASP.NET Core Identity
-### Frontend**
+### **Frontend**
 - **Markup Language**: HTML
 - **Styling**: CSS
 - **UI Framework**: Bootstrap
@@ -101,8 +101,8 @@ Bookify's architecture ensures a clear separation between business logic, data a
 ### Data Protection:
 
 - .NET built-in data protection with Hashids.
-- SSL/TLS encryption, CSRF protection, and XSS safeguards.
-- Audit logs for tracking critical events.
+-  HTTPS (SSL/TLS) encryption, CSRF protection,.
+  -Audit logs for tracking events , Errors, Exceptions
 
 ---
 
@@ -143,7 +143,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 - All necessary configuration settings, such as connection strings and API keys, are stored in `appsettings.json`.
 - **Serilog** is pre-configured to log data based on the settings in `appsettings.json`.
-- **Hangfire Dashboard** is accessible at `/hangfire` (requires admin access).
+- **Hangfire Dashboard** is accessible at `/hangfire` (requires admin role).
 
 ---
 
