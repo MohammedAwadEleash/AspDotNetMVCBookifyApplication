@@ -117,7 +117,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 - ASP.NET Core Identity with custom claim providers.
 - Secure password storage (hashed).
-- Email-based account confirmation and password recovery.
+- Email based account confirmation, password recovery, and user data updates (e.g., username, email, phone number).
 
 ### Data Protection:
 
