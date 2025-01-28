@@ -80,7 +80,6 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - **UI Framework**: Bootstrap
 - **JavaScript Libraries**: jQuery, DataTables (Client and Server-side)
 - **AJAX Calls**: JavaScript for handling dynamic interactions
-- 
 - **File Storage**: Cloudinary
 - **Background Tasks**: Hangfire
 - **Mapping**: AutoMapper
