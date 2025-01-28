@@ -52,7 +52,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - 🎥Image uploads
 - 📊 Stock monitoring
 
-- 
+
 ### 🔄 **Rental System**
 
 - Rental processing
@@ -68,7 +68,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 ---
  
-## 🔧 **Technology Stack**
+## 🛠 **Technology Stack**
 
 - **Backend Framework**: ASP.NET Core 8.0
 - **ORM**: Entity Framework Core
@@ -106,7 +106,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 ---
 
-## 🛠 **Setup Instructions**
+## 🔧 **Setup Instructions**
 
 ### **Prerequisites**
 
