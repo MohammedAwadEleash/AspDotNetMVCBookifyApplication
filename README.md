@@ -106,9 +106,10 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - Regular Expressions: Used for pattern matching and data validation (e.g., validating email format, phone numbers).
 - Data Annotations (Attributes): Applied to models for basic validation (e.g., [Required], [MaxLength],[Remote]).
 - Fluent Validation: For some of validations logic in seperated class.
+- Fluent API:       for configuring complex some of relationships, indexes, constraints;
   
 - **Database Constraints**:
-- Unique Key: Ensures fields such as email or username are unique.
+- Unique Key: Ensures fields such as Name ,Title  are unique in table.
 - Index: Used to optimize query performance and enforce uniqueness on specific columns.
 - Sequence: Used for generating sequential values for unique identifiers in the database Level.
 
