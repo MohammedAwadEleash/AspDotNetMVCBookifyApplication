@@ -99,6 +99,19 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 ## 🔐 **Security**
 
+### Validations:
+
+- Client-side Validation: Using JavaScript and jQuery.
+- Server-side Validation: Using ASP.NET Core's Model Validation.
+- Regular Expressions: Used for pattern matching and data validation (e.g., validating email format, phone numbers).
+- Data Annotations (Attributes): Applied to models for basic validation (e.g., [Required], [StringLength], [EmailAddress]).
+- Fluent Validation: For  validation logic in seperated class.
+  
+-Database Constraints:
+Unique Key: Ensures fields such as email or username are unique.
+Index: Used to optimize query performance and enforce uniqueness on specific columns.
+Sequence: Used for generating sequential values for unique identifiers ds in the database.
+
 ### Authentication:
 
 - ASP.NET Core Identity with custom claim providers.
