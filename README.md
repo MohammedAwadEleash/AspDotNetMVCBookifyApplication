@@ -108,9 +108,9 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - Fluent Validation: For some of validations logic in seperated class.
   
 - **Database Constraints**:
-Unique Key: Ensures fields such as email or username are unique.
-Index: Used to optimize query performance and enforce uniqueness on specific columns.
-Sequence: Used for generating sequential values for unique identifiers ds in the database.
+- Unique Key: Ensures fields such as email or username are unique.
+- Index: Used to optimize query performance and enforce uniqueness on specific columns.
+- Sequence: Used for generating sequential values for unique identifiers in the database Level.
 
 ### Authentication:
 
