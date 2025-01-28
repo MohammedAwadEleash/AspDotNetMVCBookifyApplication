@@ -74,12 +74,20 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - **ORM**: Entity Framework Core
 - **Database**: SQL Server
 - **Authentication** and **authorization**: ASP.NET Core Identity
+- **Logging**: Serilog (used for logging errors and exceptions)
+
 ### **Frontend**:
 - **Markup Language**: HTML
 - **Styling**: CSS
 - **UI Framework**: Bootstrap
-- **JavaScript Libraries**: jQuery, DataTables (Client and Server-side)
+- **JavaScript Libraries**: jQuery, DataTables (Client and Server-side), TinyMCE (for rich text editing), Bootbox.js (for modal dialogs and confirmation boxes), Select2 (for enhanced select boxes), Charts (for data visualization), Typeahead (for search and autocomplete functionality)
 - **AJAX Calls**: JavaScript for handling dynamic interactions
+- **Export**: DataTables library is used for exporting data to various formats such as Excel, PDF, and CSV.
+-**Animations**: Implemented using jqueryand CSS for adding smooth UI animations.
+-**Export**: DataTables library is used for exporting data to various formats such as Excel, PDF, and CSV.
+-**Pagination and Search**: Implemented with DataTables for dynamic data handling and interaction;
+-**Google**: Fonts: Used for custom fonts and typography
+
 - **File Storage**: Cloudinary
 - **Background Tasks**: Hangfire
 - **Mapping**: AutoMapper
