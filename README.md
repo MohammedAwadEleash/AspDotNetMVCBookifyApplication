@@ -155,7 +155,6 @@ Visit the live demo: [EleashBookifyDemo](http://eleashbookify.runasp.net/)
 - **Username**: `AdminTest@bookify.com`
 - **Password**: `P@AdminEleashBookifyTest12,@}`
 
-![Logo_sm](https://github.com/user-attachments/assets/ae015915-4a2d-49c3-b2bc-96a29443cd3d)
 
 
 
