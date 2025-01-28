@@ -62,7 +62,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 ### 👤 **User Management**
 
-- 🔐  🔐 Role-based permissions
+- 🔐 🔐 Role-based permissions
 -🔑🔏    Secure login/authentication
 -📩 🔔  Email verification and profile management 
 
