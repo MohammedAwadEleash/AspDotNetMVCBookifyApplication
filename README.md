@@ -68,7 +68,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 
 ---
  
-## 🛠 **Technology Stack**
+## 🛠 **Technology/Libraries Stack**
 
 - **Backend Framework**: ASP.NET Core 8.0
 - **ORM**: Entity Framework Core
