@@ -75,6 +75,12 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - **Database**: SQL Server
 - **Authentication** and **authorization**: ASP.NET Core Identity
 - **Logging**: Serilog (used for logging errors and exceptions)
+- ✅ **Architecture**: Clean Architecture && Service Layer Pattern
+- ✅ **Design Patterns:**: Repository Pattern && Unit of Work & Service Layer
+- ✅ **SOLID Principles:**: some of SOLID Principles  such as the single responsibility principle , Dependency Inversion Principle
+- ✅ **Architectural Patterns/Principles :**: Dependency Injection (DI)
+ 
+---
 
 ### **Frontend**:
 - **Markup Language**: HTML
