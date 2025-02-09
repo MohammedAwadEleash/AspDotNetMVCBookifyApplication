@@ -80,7 +80,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - ✅ **SOLID Principles:**: some of SOLID Principles  such as the single responsibility principle , Dependency Inversion Principle
 - ✅ **Architectural Patterns/Principles :**: Dependency Injection (DI)
  
----
+
 
 ### **Frontend**:
 - **Markup Language**: HTML
