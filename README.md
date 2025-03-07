@@ -73,6 +73,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 ### **Backend**:
 - **Backend Framework**: ASP.NET Core 8.0
 - **ORM:** Entity Framework Core
+-  **LINQ:** Used for querying and manipulating data efficiently.
 - **Database:** SQL Server
 - **Authentication** and **authorization:** ASP.NET Core Identity
 - **Logging:** Serilog (used for logging errors and exceptions)
