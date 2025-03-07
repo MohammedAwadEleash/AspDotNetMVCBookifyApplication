@@ -80,7 +80,11 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - ✅ **Design Patterns:** Repository Pattern && Unit of Work & Service Layer
 - ✅ **SOLID Principles:** some of SOLID Principles  such as the single responsibility principle , Dependency Inversion Principle
 - ✅ **Architectural Principles:** Dependency Injection (DI)
- 
+ - **File Storage**: Cloudinary
+- **Background Tasks**: Hangfire
+- **Mapping**: AutoMapper
+- **WhatsApp API**: Twilio
+- **Image Processing**: ImageSharp (SixLabors.ImageSharp)
 
 
 ### **Frontend**:
@@ -95,11 +99,7 @@ Bookify's architecture ensures a clear separation between business logic, data a
 - **Pagination and Search**: Implemented with DataTables for dynamic data handling and interaction;
 - **Google**: Fonts: Used for custom fonts and typography
 
-- **File Storage**: Cloudinary
-- **Background Tasks**: Hangfire
-- **Mapping**: AutoMapper
-- **WhatsApp API**: Twilio
-- **Image Processing**: ImageSharp (SixLabors.ImageSharp)
+
 
   
 ---
