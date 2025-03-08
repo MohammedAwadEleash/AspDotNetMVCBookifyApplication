@@ -182,8 +182,8 @@ Visit the live demo: [EleashBookifyDemo](http://eleashbookify.runasp.net/)
 
 **Admin Credentials**:
 
-- **Username**: `AdminTest@bookify.com`
-- **Password**: `P@AdminEleashBookifyTest12,@}`
+- **Username**: `AdminTest@Bookify.Com`
+- **Password**: `P@ss*w@o#r$$d1>2,3`
 
 
 
