@@ -185,7 +185,7 @@ Visit the live demo: [EleashBookifyDemo](http://eleashbookify.runasp.net/)
 - **Username**: `AdminTest@Bookify.Com`
 - **Password**: `P@ss*w@o#r$$d1>2,3`
 
-
+**Video Description**: https://drive.google.com/file/d/1WB5beHCPZcW02aDjc3e5zn_Jm3NNirkD/view?usp=sharing
 
 
 
