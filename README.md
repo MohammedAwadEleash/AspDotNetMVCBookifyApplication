@@ -179,7 +179,10 @@ Bookify's architecture ensures a clear separation between business logic, data a
 ## 🌐 **Demo Link**
 
 Visit the live demo: [EleashBookifyDemo](http://eleashbookify.runasp.net/)
-### 🎥 **Application Walkthrough Video** Watch the full demo here: 📺 [View Demo Video](https://drive.google.com/file/d/1WB5beHCPZcW02aDjc3e5zn_Jm3NNirkD/view?usp=sharing)
+## 🎥 **Project Walkthrough Video**
+
+Watch the full demo of the **EleashBookify** project by clicking the link below:  
+📺 [View Demo Video](https://drive.google.com/file/d/1WB5beHCPZcW02aDjc3e5zn_Jm3NNirkD/view?usp=sharing)
 
 
 **Admin Credentials**:
